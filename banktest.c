@@ -24,9 +24,9 @@ void Acct_creation(Details *p_user){
 	printf("Fill in details\n");
 	printf("Full name: ");
 	fgets(p_user->name,sizeof(p_user->name),stdin);
-	printf("\nAge: ");
+	printf("Age: ");
 	scanf("%d",&p_user->age);
-	printf("\nDate Of birth: ");
+	printf("Date Of birth: ");
 	scanf("%d %d %d",&p_user->dob.day,&p_user->dob.month,&p_user->dob.year);
 }
 
@@ -59,12 +59,39 @@ void View_Acct(Details *p_user){
 
 
 void main(){
-
-	//printf("\tBanking Test Application\n");
-	//printf("---------------------------------------------------------------------");
-
-	//printf("\n Menu");
 	Details User;
+	int input;
+	printf("\t\n\nBanking Test Application\n");
+	printf("---------------------------------------------------------------------");
+
+	printf("\n\tSelect an option(1-5)>\n");
+	printf("(1.) Create an account\n");
+	printf("(2.) View account details\n");
+	printf("(3.) Deposit into account\n");
+	printf("(4.) Withdraw from account\n");
+	printf("(5.) Delete account\n");
+	printf("Enter Option: ");
+	scanf("%d",&input);
+
+
+	switch(input){
+	case 1:
+		Acct_creation(&User);
+		break;
+	case 2:
+		View_Acct(&User);
+		break;
+	case 3:
+		Deposit(&User);
+		break;
+	case 4:
+		withdrawal(&User);
+		break;
+	default:
+		printf("Invalid action, Please retry\n");
+		break;
+	}
+
 	View_Acct(&User);
 	Acct_creation(&User);
 	View_Acct(&User);
