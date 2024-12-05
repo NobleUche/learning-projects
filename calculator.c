@@ -12,7 +12,7 @@ void subtract();
 
 int main(){
 	printf("\tCalculator App\n");
-	printf("----------------------------------------------------------------\n");
+	printf("------------------------------------------------------------------\n");
 	printf("\tMenu\n");
 	printf("1. ADDITION\n");
 	printf("2. SUBTRACTION\n");

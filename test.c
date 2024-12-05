@@ -1,36 +1,12 @@
 #include <stdio.h>
 
+int main() {
+    int num = 5; // 0101 in binary
+    int bit_position = 1; // We want to set the 1st bit (counting from 0)
 
+    // Set the bit at position 1
+    num |= (1 << bit_position); // Shift 1 to the left by 1 position and OR with num
 
-int a[10];
-int b[10];
-int c[10];
-int sum=0;
-int i;
-
-void main(){
-
-	printf("Enter Values of array A:");
-	for (i=0;i<10;i++)
-		scanf("%d", &a[i]);
-
-	printf("\nEnter Values for B:");
-	for (i=0;i<10;i++)
-		scanf("%d",&b[i]);
-
-
-	for (i=0; i<10;i++)
-		c[i]=a[i]+b[i];
-	
-	for (i=0;i<10;i++)
-		printf("Array A: %d\n",a[i]);
-
-	for (i=0;i<10;i++)
-		printf("Array B: %d\n",b[i]);
-
-	for (i=0;i<10;i++)
-		printf("Array C: %d\n",c[i]);
-
-
-
+    printf("After setting bit %d: %d\n", bit_position, num); // Output: 7 (0111 in binary)
+    return 0;
 }
